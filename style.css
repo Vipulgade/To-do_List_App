@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg,rgb(231, 192, 241),rgb(147, 197, 143),rgb(176, 182, 243),rgb(235, 193, 139),rgb(162, 112, 140),rgb(156, 218, 236));
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    width: 100%;
+    max-width: 700px; /* Max width for the todo app */
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 10px 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Card shadow */
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 180px;
+    text-align: center;
+    text-shadow: #010f25;
+}
+
+.todo-app img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+   
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding: 10px 50px; /* Adjust padding for better alignment */
+    margin-bottom: 25px;
+    width: 95%;
+    height: 80%;
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+.row:hover {
+    background: #d5d9dc; /* Slight change on hover */
+}
+
+.myinput1 {
+    flex: 1;
+    border: #e01313 solid;
+    outline:#e04c3d; 
+    background: transparent;
+    width: 220%;
+    padding: 10px 50px;
+    margin: 20px;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 1rem; /* Responsive font size */
+    border-radius: 5px;
+    align-content: center;
+}
+.area{
+    padding: 20px;
+    padding-left:120px ;
+}
+.areamsg{
+    border: #1e0564 solid;
+    outline:#d67f75; 
+    max-width: 150%;
+    height: 130px;
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 5px;
+    outline:#d67f75; 
+
+    background: transparent;
+}
+
+
+button {
+    border: none;
+    outline: none;
+    padding: 20px 40px; /* Adjusted padding for better size */
+    background: #ff5945;
+    color: #fff;
+    font-size: 1rem; /* Responsive font size */
+    cursor: pointer;
+    border-radius: 40px;
+    transition: background 0.3s, transform 0.2s; /* Add transition for scale */
+}
+
+button:hover {
+    background: #e04c3d; /* Slightly darker on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+ul {
+    padding-left: 0; /* Remove default padding */
+}
+
+ul li {
+    list-style: none;
+    font-size: 1rem;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+ul li:hover {
+    background: #f1f1f1; /* Light background on hover */
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+    background-image: url('https://t3.ftcdn.net/jpg/04/59/56/64/240_F_459566437_7X1QT5PsutpSl08W8sx8LcR28TeFe2NC.jpg');
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4436/4436481.png'); /* Example checked icon */
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s; /* Transition for hover effect */
+}
+
+ul li span:hover {
+    background-image:linear-gradient(to right,rgb(231, 192, 241),rgb(147, 197, 143),rgb(176, 182, 243),rgb(235, 193, 139),rgb(162, 112, 140),rgb(156, 218, 236)); /* Change background on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: stretch;   /* Stretch elements to full width */
+    }
+
+    button {
+        width: 100%; /* Full-width button on smaller screens */
+        margin-top: 10px; /* Space between input and button */
+    }
+
+    ul li {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 10px 8px; /* Adjust padding for smaller screens */
+    }
+}
